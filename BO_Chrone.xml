@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BO_Chrone</name>
+    </assembly>
+    <members>
+        <member name="T:BO_Chrone.TcpSlave">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.#ctor(System.String,System.Int32,System.Byte)">
+            <summary>
+            Инициализирует новый экземпляр класса обёртки <see cref="T:BO_Chrone.TcpSlave"/>
+            для класса <see cref="T:Modbus.Device.ModbusTcpSlave"/>
+            </summary>
+            <param name="ip">IP Адрес</param>
+            <param name="port">Порт</param>
+            <param name="slaveID">Адрес slave</param>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.Start">
+            <summary>
+            Запускает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.Stop">
+            <summary>
+            Останавливает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.Write(System.Int32,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="ind"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.WriteData(BO_Chrone.ChroneData,System.UInt16[],BO_Chrone.Groups,System.Int32)">
+            <summary>
+            ~ 2563 тегов
+            </summary>
+            <param name="data"></param>
+            <param name="inputData"></param>
+            <param name="groups"></param>
+            <param name="start"></param>
+        </member>
+        <member name="M:BO_Chrone.TcpSlave.WriteData(BO_Chrone.ChroneData,System.UInt16[],System.Double[],BO_Chrone.Groups,System.Int32)">
+            <summary>
+            ~ 2587 тегов
+            </summary>
+            <param name="data"></param>
+            <param name="inputData"></param>
+            <param name="groups"></param>
+            <param name="start"></param>
+        </member>
+        <member name="T:BO_Chrone.TcpMaster">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.#ctor(System.String,System.Int32,System.Byte)">
+            <summary>
+            Инициализирует новый экземпляр класса обёртки <see cref="T:BO_Chrone.TcpSlave"/>
+            для класса <see cref="T:Modbus.Device.ModbusTcpSlave"/>
+            </summary>
+            <param name="ip">IP Адрес</param>
+            <param name="port">Порт</param>
+            <param name="slaveID">Адрес slave</param>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.Start">
+            <summary>
+            Запускает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.Stop">
+            <summary>
+            Останавливает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.Write(System.UInt16,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="address"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.Read(System.UInt16,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="address"></param>
+            <param name="points"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.SetAlarm(System.Boolean[])">
+            <summary>
+            
+            </summary>
+            <param name="bits"></param>
+        </member>
+        <member name="M:BO_Chrone.TcpMaster.GetAlarm">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BO_Chrone.RtuMaster">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.#ctor">
+            <summary>
+            пустой
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.Start">
+            <summary>
+            Запускает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.Stop">
+            <summary>
+            Останавливает slave-client
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.Write(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="slaveID"></param>
+            <param name="address"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.Read(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="slaveID"></param>
+            <param name="address"></param>
+            <param name="points"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.SetAlarm(System.Byte,System.Boolean[])">
+            <summary>
+            
+            </summary>
+            <param name="slaveID"></param>
+            <param name="bits"></param>
+        </member>
+        <member name="M:BO_Chrone.RtuMaster.GetAlarm(System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="slaveID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BO_Chrone.AnData">
+            <summary>
+            Структура с A-n диаграммами
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnData.an_pos">
+            <summary>
+            A-n диаграмма для частот положительных импульсов
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnData.an_neg">
+            <summary>
+            A-n диаграмма для частот отрицательных импульсов
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.AnData.#ctor(BO_Chrone.ChroneData,System.Char,System.Int32)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:BO_Chrone.AnData"/>
+            расчитывает A-n диаграммы по данным с выбранного канала
+            </summary>
+            <param name="data">Структура с сырыми данными</param>
+            <param name="channel">Номер канала (1-A, 2-B, 3-C)</param>
+            <param name="rowsIgnore">Число строк для удаления (от центра в обе стороны)</param>
+        </member>
+        <member name="T:BO_Chrone.AnGram">
+            <summary>
+            Структура с A-n диаграммой
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnGram.size">
+            <summary>
+            Число строк
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnGram.A">
+            <summary>
+            Амплитуды
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnGram.N">
+            <summary>
+            Частоты следования импульсов
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnGram.QM">
+            <summary>
+            Наибольшая повторяющаяся амплитуда ЧР
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.AnGram.NQN">
+            <summary>
+            Нормализованная гистограмма импульсов
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.AnGram.#ctor(System.Double[],System.Double[])">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.AnGram"/>
+            </summary>
+            <param name="A">Массив амплитуд</param>
+            <param name="n">Массив частот следования импульсов</param>
+        </member>
+        <member name="M:BO_Chrone.AnGram.Get_QM(System.Double)">
+            <summary>
+            Возвращает наибольшую повторяющую амплитуду ЧР.
+            Находит линейную интерполяцию в точке пересечения <paramref name="find"/>
+            </summary>
+            <param name="find">Граница</param>
+            <returns>Наибольшая повторяющаяся амплитуда ЧР</returns>
+        </member>
+        <member name="M:BO_Chrone.AnGram.Get_NQN">
+            <summary>
+            Возвращает нормализованную гистограмму импульсов
+            </summary>
+            <returns>Нормализованная гистограмма импульсов</returns>
+        </member>
+        <member name="T:BO_Chrone.Groups">
+            <summary>
+            Структура с группами разбиения. Всего предусмотрено не более 15 групп,
+            первая граница всегда 0 (отсутствие группы/данных).
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.Groups.#ctor(System.String)">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.Groups"/>,
+            читает границы групп из файла. Если файл не найдён
+            </summary>
+            <param name="path">Путь к файлу</param>
+        </member>
+        <member name="M:BO_Chrone.Groups.#ctor(System.Single[])">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.Groups"/>,
+            добавляет границы групп из массива
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:BO_Chrone.Groups.GetGroup(System.Single)">
+            <summary>
+            Возвращает группу разбиения для числа
+            </summary>
+            <param name="n">Число</param>
+            <returns>Группа разбиения</returns>
+        </member>
+        <member name="M:BO_Chrone.Groups.GetZone">
+            <summary>
+            Возвращает все границы групп разбиения
+            </summary>
+            <returns>Все границы</returns>
+        </member>
+        <member name="M:BO_Chrone.Groups.GetZone(System.Int32)">
+            <summary>
+            Возвращает минимум и максимум группы разбиения.
+            Первая группа от 0, последняя до inf
+            </summary>
+            <param name="group">Группа разбиения</param>
+            <returns>Минимум и максимум границы</returns>
+        </member>
+        <member name="M:BO_Chrone.Groups.SetDefault">
+            <summary>
+            Дефолтное разбиение по группам
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.Groups.SetZones(System.Single[])">
+            <summary>
+            Добавляет группы разбиения, но не более 15
+            </summary>
+        </member>
+        <member name="T:BO_Chrone.MainStatus">
+            <summary>
+            Структура, хранящая статусы прибора
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.Autosearch">
+            <summary>
+            Режим автопоиска амплитуд по факту
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.ExceedChannel_3">
+            <summary>
+            Было превышение амплитуды в 3 канале, сбрасывается после чтения
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.ExceedChannel_2">
+            <summary>
+            Было превышение амплитуды во 2 канале, сбрасывается после чтения
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.ExceedChannel_1">
+            <summary>
+            Было превышение амплитуды в 1 канале, сбрасывается после чтения
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_13">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_14">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_15">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.CycleComplete">
+            <summary>
+            Закончился полный цикл измерения за заданное время
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.Reset">
+            <summary>
+            Был выполнен сброс, сбрасывается после чтения регистра
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.Sleep">
+            <summary>
+            Режим сна
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.Overheat">
+            <summary>
+            Был перегрев, сбрасывается после чтения регистра
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.DataReady">
+            <summary>
+            Данные готовы, сбрасывается после чтения буфера данных
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_5">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_6">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.status_7">
+            <summary>
+            Свободен
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.DataCorrupt">
+            <summary>
+            Возможное искажение данных, сбрасывается перед сбором данных.
+            Если в момент сбора данных было произведено считывание файла
+            из SD карты, то возможно искажение текущего набора данных
+            и устанавливается этот флаг
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.MainStatus.StatusReceive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.MainStatus.#ctor(System.Byte[])">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.MainStatus"/>
+            со статусами прибора
+            </summary>
+            <param name="values">Значения регистров 0x74 и 0x75</param>
+        </member>
+        <member name="M:BO_Chrone.MainStatus.ToString">
+            <summary>
+            Отображение в байтовом виде
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BO_Chrone.PRPD">
+            <summary>
+            Структура с PRPD диаграммой
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.PRPD.items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.PRPD.d_range">
+            <summary>
+            Диапазон
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.PRPD.#ctor(BO_Chrone.ChroneData,System.Char,BO_Chrone.Groups)">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.PRPD"/>,
+            расчитывает PRPD диаграмму по данным с выбранного канала
+            </summary>
+            <param name="data">Структура с сырыми данными</param>
+            <param name="channel">Номер канала (1-A, 2-B, 3-C)</param>
+            <param name="groups">Группы разбиения</param>
+        </member>
+        <member name="M:BO_Chrone.PRPD.#ctor(BO_Chrone.ChroneData,BO_Chrone.Groups)">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.PRPD"/>,
+            расчитывает PRPD диаграмму по всем каналам, 
+            но точки имееют только группу разбиения.
+            Для передачи по Modbus
+            </summary>
+            <param name="data">Структура с сырыми данными</param>
+            <param name="groups">Группы разбиения</param>
+        </member>
+        <member name="M:BO_Chrone.PRPD.#ctor(System.UInt16[],System.Char,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="settings"></param>
+            <param name="channel"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:BO_Chrone.PRPD.Poll(System.Int32[0:,0:],System.Int32,System.Double,BO_Chrone.Groups,System.Boolean)">
+            <summary>
+            Обход матрицы
+            </summary>
+            <param name="data"></param>
+            <param name="range"></param>
+            <param name="t"></param>
+            <param name="groups"></param>
+            <param name="only_group"></param>
+        </member>
+        <member name="T:BO_Chrone.PRPD_Point">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BO_Chrone.PRPD_Point.A">
+            <summary>
+            Амплитуды
+            </summary>
+        </member>
+        <member name="P:BO_Chrone.PRPD_Point.ph">
+            <summary>
+            Фазы
+            </summary>
+        </member>
+        <member name="P:BO_Chrone.PRPD_Point.n">
+            <summary>
+            Частота следования импульсов
+            </summary>
+        </member>
+        <member name="P:BO_Chrone.PRPD_Point.group">
+            <summary>
+            Номер группы
+            </summary>
+        </member>
+        <member name="T:BO_Chrone.ChroneData">
+            <summary>
+            Структура с сырыми данными от прибора
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.ChroneData.datetime">
+            <summary>
+            Время замера
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.ChroneData.settings">
+            <summary>
+            Массив с настройками
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.ChroneData.ph_a">
+            <summary>
+            Данные измерения первого канала
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.ChroneData.ph_b">
+            <summary>
+            Данные измерения второго канала
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.ChroneData.ph_c">
+            <summary>
+            Данные измерения третьего канала
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.#ctor(System.DateTime,System.Byte[],System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.ChroneData"/>
+            </summary>
+            <param name="Dtime">Метка времени</param>
+            <param name="Setting">Блок с настройками (размер: 128)</param>
+            <param name="Ph_a">Блок с данными 1 канала (размер: 12800)</param>
+            <param name="Ph_b">Блок с данными 1 канала (размер: 12800)</param>
+            <param name="Ph_c">Блок с данными 1 канала (размер: 12800)</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.#ctor(System.Byte[])">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.ChroneData"/>
+            используя сырые данные
+            </summary>
+            <param name="data">Исходные сырые данные</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.#ctor(System.String)">
+            <summary>
+            Инициализирует новый экземпляр структуры <see cref="T:BO_Chrone.ChroneData"/>
+            используя данные из файла
+            </summary>
+            <param name="path">Путь к файлу с сырыми данными</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.GetArray">
+            <summary>
+            Возвращает данные и исходном виде
+            </summary>
+            <returns>Массив c данными</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.CheckData">
+            <summary>
+            Проверяет замер на обрезанность
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneData.ParseData(System.Byte[])">
+            <summary>
+            Разбивает одномерный массив на части
+            </summary>
+            <param name="data">Исходные сырые данные</param>
+        </member>
+        <member name="T:BO_Chrone.ChroneControl">
+            <summary>
+            Класс, управляющий работой устройства регистрации ЧР "Питон"
+            </summary>
+        </member>
+        <member name="P:BO_Chrone.ChroneControl.StatusInspection">
+            <summary>
+            Статус активности замера
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.#ctor(System.String,System.Int32)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:BO_Chrone.ChroneControl"/>
+            с данными для подключения устройства "Питон"
+            </summary>
+            <param name="ip">IP Адрес сервера</param>
+            <param name="port">Порт</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Connect">
+            <summary>
+            Подключение к серверу прибора
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.CheckConnect">
+            <summary>
+            Возвращает текущее состояние подключения к серверу прибора
+            </summary>
+            <returns>Состояние подключения</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Sleep">
+            <summary>
+            Ставит флаг сна и переводит прибор в режим сна
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.CheckSleep">
+            <summary>
+            Проверяет активность состояния сна прибора
+            </summary>
+            <returns>Активность режима сна</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Awake">
+            <summary>
+            Сбрасывает флаг сна и переводит прибор в рабочее состояние
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.CheckMeasurementSuccess">
+            <summary>
+            Проверяет успешность формирования файла замера в памяти прибора
+            </summary>
+            <returns>Успех формирования файла замера</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetStatus">
+            <summary>
+            Возвращает все статусы прибора
+            </summary>
+            <returns>Структура со статусами</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Reset">
+            <summary>
+            Выполняет полный сброс настроек прибора
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Reconnect">
+            <summary>
+            Переподключение
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.Disconnect">
+            <summary>
+            Отключение от сервера прибора
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetDateTime">
+            <summary>
+            Возвращает системное время прибора. Регистры 0x0 - 0x7
+            </summary>
+            <returns>Дата и время</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.SetDateTime(System.DateTime)">
+            <summary>
+            Устанавливает системное время прибора
+            </summary>
+            <param name="dtime">Дата и время</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetValue(System.Byte)">
+            <summary>
+            Возвращает значение регистра
+            </summary>
+            <param name="register">Номер регистра</param>
+            <returns>Значение регистра (в 10-ричной форме)</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.SetValue(System.Byte,System.Byte)">
+            <summary>
+            Устанавливает значения регистра
+            </summary>
+            <param name="register">Номер регистра</param>
+            <param name="value">Значение для устаноки</param>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetLastFileId">
+            <summary>
+            Возвращает ID последного файла записанного на приборе.
+            Для старого режима записи файлов на носитель
+            </summary>
+            <returns>ID последнего файла</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetFile(System.String)">
+            <summary>
+            Возвращает файл с данными в бинарном виде
+            </summary>
+            <param name="fileid">ID файла. Состоит из номера и нулей с левой части,
+            обязательно из 6 символов (например '001806', '000006').
+            При пустом значении, вернёт последний файл по старому режиму ("").
+            При дефолтном значении, вернёт последний файл по новому режиму</param>
+            <returns>Массив с данными</returns>
+        </member>
+        <member name="M:BO_Chrone.ChroneControl.GetData(System.String)">
+            <summary>
+            Возвращает структуру <see cref="T:BO_Chrone.ChroneData"/> с сырыми данными с прибора
+            </summary>
+            <param name="fileid">ID файла. Состоит из номера и нулей с левой части,
+            обязательно из 6 символов (например '001806', '000006').
+            При пустом значении, вернёт последний файл по старому режиму ("")
+            При дефолтном значении, вернёт последний файл по новому режиму</param>
+            <returns>Структура <see cref="T:BO_Chrone.ChroneData"/> с сырыми данными</returns>
+        </member>
+        <member name="T:BO_Chrone.Compute">
+            <summary>
+            Класс с функциями обработки данных
+            </summary>
+        </member>
+        <member name="F:BO_Chrone.Compute.InputRange">
+            <summary>
+            Входной диапазон
+            </summary>
+        </member>
+        <member name="M:BO_Chrone.Compute.Linear(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Возвращает линейную интерполяцию между двумя точками
+            </summary>
+            <param name="x">Искомая точка по оси X</param>
+            <param name="x0">Координата X первой точки</param>
+            <param name="y0">Координата Y первой точки</param>
+            <param name="x1">Координата X второй точки</param>
+            <param name="y1">Координата Y второйй точки</param>
+            <returns>Результат интерполяции</returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.ParseMatrix(System.Byte[])">
+            <summary>
+            Расшифровывает матрицу из байтового представления
+            </summary>
+            <param name="raw_data">Массив с сырыми данными</param>
+            <returns>Матрица с данными</returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.ParseDateTime(System.Byte[])">
+            <summary>
+            Расшифровывает системное время из специфического представления
+            </summary>
+            <param name="data">Массив с сырыми данными</param>
+            <returns>Дата и время</returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.Get_T(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="startInd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.FloatEncode(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.FloatDecode(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.Pack_I2Ush(System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.Pack_P2Ush(System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.UnPack_I2Ush(System.UInt16[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.UnPack_P2Ush(System.UInt16[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.B2I(System.Byte[])">
+            <summary>
+            Конвертирует массив byte в массив int. 
+            На один int идёт 4 byte, итоговый массив в 4 раза меньше исходного
+            </summary>
+            <param name="data">Массив с исходными данными</param>
+            <returns>Итоговый массив</returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.D2X(System.Int32)">
+            <summary>
+            Конвертирует десятичное число в двоично-десятичное
+            </summary>
+            <param name="a">Десятичное число</param>
+            <returns>Двоично-десятиное число</returns>
+        </member>
+        <member name="M:BO_Chrone.Compute.X2D(System.Byte)">
+            <summary>
+            Конвертирует двоично-десятичное число в десятичное
+            </summary>
+            <param name="a">Двоично-десятичное число</param>
+            <returns>Десятичное число</returns>
+        </member>
+    </members>
+</doc>
